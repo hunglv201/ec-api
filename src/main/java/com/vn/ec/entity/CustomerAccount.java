@@ -11,7 +11,7 @@ import javax.validation.constraints.Size;
 
 @Data
 @Entity
-@Table(name = "customer-accounts")
+@Table(name = "customer_accounts")
 public class CustomerAccount extends CommonEntity {
     @Column(name = "login_id")
     @NotNull(message = Constants.VALIDATE_THE_FIELD)

@@ -18,7 +18,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 public class WebSecurityConfig {
 
     private static final String[] AUTH_WHITELIST = {
-            "/", "/api/ec/login"
+            "/", "/api/ec/login","/api/ec/sign-up"
     };
 
     private AuthEntryPoint authEntryPointJwt;
