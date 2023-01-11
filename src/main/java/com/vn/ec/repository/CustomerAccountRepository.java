@@ -1,6 +1,6 @@
 package com.vn.ec.repository;
 
-import com.vn.ec.dto.CustomerInfoDto;
+import com.vn.ec.dto.response.CustomerInfoDto;
 import com.vn.ec.entity.CustomerAccount;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;

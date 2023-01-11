@@ -5,7 +5,7 @@ import com.vn.ec.common.Constants;
 import com.vn.ec.common.exception.InvalidPasswordException;
 import com.vn.ec.common.exception.RecordNotFoundException;
 import com.vn.ec.dto.ApiResponse;
-import com.vn.ec.dto.CustomerInfoDto;
+import com.vn.ec.dto.response.CustomerInfoDto;
 import com.vn.ec.dto.request.LoginRequest;
 import com.vn.ec.dto.response.LoginResponse;
 import com.vn.ec.repository.CustomerAccountRepository;

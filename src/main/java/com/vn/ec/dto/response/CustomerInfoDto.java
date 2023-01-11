@@ -1,4 +1,4 @@
-package com.vn.ec.dto;
+package com.vn.ec.dto.response;
 
 public interface CustomerInfoDto {
      Long getCustomerId();
