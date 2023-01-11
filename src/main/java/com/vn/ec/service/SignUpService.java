@@ -39,7 +39,4 @@ public class SignUpService {
         customerAccountRepository.save(customerAccount1);
         return ApiResponse.apiResponseCompleted();
     }
-
-
-
 }
