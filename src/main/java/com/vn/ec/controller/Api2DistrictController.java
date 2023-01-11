@@ -20,4 +20,12 @@ public class Api2DistrictController {
     public ResponseEntity<ApiResponse> provinceCode(@NotNull @PathVariable String id) {
         return ResponseEntity.ok().body(api02Service.getDistrict(id));
     }
+    @GetMapping("/v2/city/{id}")
+    public ResponseEntity<ApiResponse> provinceCode2(@NotNull @PathVariable String id) {
+        return ResponseEntity.ok().body(api02Service.getDistrictV2(id));
+    }
+    @GetMapping("/v3/city/{id}")
+    public ResponseEntity<ApiResponse> provinceCode3(@NotNull @PathVariable String id) {
+        return ResponseEntity.ok().body(api02Service.getDistrictV3(id));
+    }
 }
