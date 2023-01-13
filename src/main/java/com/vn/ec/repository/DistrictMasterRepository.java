@@ -17,7 +17,7 @@ public interface DistrictMasterRepository extends JpaRepository<DistrictMaster, 
             "FROM DISTRICT_MASTERS dm\n" +
             "WHERE dm.province_Code =:id AND dm.delete_Flag = false", nativeQuery = true)
     List<Aip2Response> getDistrict(String id);
-    List<Api2ResponseV2> findAllByProvinceCodeAndDeleteFlagFalse(String code);
+    List<DistrictMaster> findAllByProvinceCodeAndDeleteFlagFalse(String code);
     @Query(value = "SELECT dm.districtCode AS id, dm.districtName as name\n" +
             " FROM DistrictMaster  dm\n" +
             "WHERE dm.provinceCode =:id AND dm.deleteFlag = false")
