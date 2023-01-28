@@ -1,7 +1,5 @@
 package com.vn.ec.repository;
 
-import com.vn.ec.dto.response.Aip2Response;
-import com.vn.ec.dto.response.Api2ResponseV2;
 import com.vn.ec.dto.response.BranchesDto;
 import com.vn.ec.dto.response.BranchesDtoV2;
 import com.vn.ec.entity.Branches;
