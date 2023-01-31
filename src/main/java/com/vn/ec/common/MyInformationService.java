@@ -1,6 +1,6 @@
 package com.vn.ec.common;
 
-import com.vn.ec.dto.ApiResponse;
+import com.vn.ec.dto.response.MyInformationResponse;
 import com.vn.ec.repository.MyInformationRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 @AllArgsConstructor
 public class MyInformationService {
     private final MyInformationRepository myInformationRepository;
-    public ApiResponse myInformation(Long userId) {
-        return ApiResponse.apiResponseCompleted(myInformationRepository.getInformation(userId));
+    public MyInformationResponse myInformation(Long userId) {
+        return myInformationRepository.getInformation(userId);
     }
 }

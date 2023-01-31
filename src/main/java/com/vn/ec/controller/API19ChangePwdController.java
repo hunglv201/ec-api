@@ -1,7 +1,6 @@
 package com.vn.ec.controller;
 
 import com.vn.ec.common.CustomerAccountService;
-import com.vn.ec.dto.ApiResponse;
 import com.vn.ec.dto.request.API19ChangePwdRequest;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -19,7 +18,7 @@ public class API19ChangePwdController {
     private final CustomerAccountService service;
 
     @PutMapping("/change-password")
-    public ResponseEntity<ApiResponse> changePassword(@Valid @RequestBody API19ChangePwdRequest req) {
+    public ResponseEntity<?> changePassword(@Valid @RequestBody API19ChangePwdRequest req) {
         return ResponseEntity.ok().body(service.changePassword(req));
     }
 }

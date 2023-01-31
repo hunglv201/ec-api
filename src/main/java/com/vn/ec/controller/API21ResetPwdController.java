@@ -1,7 +1,6 @@
 package com.vn.ec.controller;
 
 import com.vn.ec.common.CustomerAccountService;
-import com.vn.ec.dto.ApiResponse;
 import com.vn.ec.dto.request.API21ResetPwdRequest;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -18,7 +17,7 @@ public class API21ResetPwdController {
     private final CustomerAccountService service;
 
     @PostMapping("/reset-password")
-    public ResponseEntity<ApiResponse> resetPassword(@Valid @RequestBody API21ResetPwdRequest req) {
+    public ResponseEntity<?> resetPassword(@Valid @RequestBody API21ResetPwdRequest req) {
         return ResponseEntity.ok().body(service.resetPassword(req));
     }
 }

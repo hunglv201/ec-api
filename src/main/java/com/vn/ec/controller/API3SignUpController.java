@@ -1,6 +1,5 @@
 package com.vn.ec.controller;
 
-import com.vn.ec.dto.ApiResponse;
 import com.vn.ec.dto.request.SignUpRequest;
 import com.vn.ec.service.SignUpService;
 import lombok.AllArgsConstructor;
@@ -26,7 +25,7 @@ public class API3SignUpController {
     private final SignUpService signUpService;
 
     @PostMapping("/sign-up")
-    public ResponseEntity<ApiResponse> login(@Valid @RequestBody SignUpRequest request) throws InvalidAlgorithmParameterException, NoSuchPaddingException, IllegalBlockSizeException, NoSuchAlgorithmException, InvalidKeySpecException, BadPaddingException, InvalidKeyException {
+    public ResponseEntity<?> login(@Valid @RequestBody SignUpRequest request) throws InvalidAlgorithmParameterException, NoSuchPaddingException, IllegalBlockSizeException, NoSuchAlgorithmException, InvalidKeySpecException, BadPaddingException, InvalidKeyException {
         return ResponseEntity.ok().body(signUpService.signUp(request));
     }
 

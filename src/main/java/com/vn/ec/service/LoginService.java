@@ -4,8 +4,6 @@ package com.vn.ec.service;
 import com.vn.ec.common.Constants;
 import com.vn.ec.common.exception.InvalidPasswordException;
 import com.vn.ec.common.exception.RecordNotFoundException;
-import com.vn.ec.dto.ApiResponse;
-import com.vn.ec.dto.response.CustomerInfoDto;
 import com.vn.ec.dto.request.LoginRequest;
 import com.vn.ec.dto.response.LoginResponse;
 import com.vn.ec.entity.CustomerAccount;
@@ -28,7 +26,7 @@ public class LoginService {
     private final JwtTokenUtil jwtUtils;
 
     @SneakyThrows
-    public ApiResponse login(LoginRequest loginRequest) {
+    public LoginResponse login(LoginRequest loginRequest) {
         String loginId = loginRequest.getLoginId().strip();
         Optional<CustomerAccount> customerAccountOptional = customerAccountRepository.findByLoginIdAndDeleteFlag(loginId, false);
         if (customerAccountOptional.isEmpty())
@@ -58,6 +56,6 @@ public class LoginService {
 //                .loginId(customerInfoDto.getLoginId())
 //                .token(jwt)
 //                .build();
-        return ApiResponse.apiResponseCompleted(loginResponse1);
+        return loginResponse1;
     }
 }

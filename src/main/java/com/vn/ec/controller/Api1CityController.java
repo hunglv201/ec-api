@@ -1,6 +1,5 @@
 package com.vn.ec.controller;
 
-import com.vn.ec.dto.ApiResponse;
 import com.vn.ec.service.CityService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -14,15 +13,15 @@ import org.springframework.web.bind.annotation.RestController;
 public class Api1CityController {
     private final CityService cityService;
     @GetMapping("/city")
-    public ResponseEntity<ApiResponse> dropDownProvinceCode() {
+    public ResponseEntity<?> dropDownProvinceCode() {
         return ResponseEntity.ok().body(cityService.getCity());
     }
     @GetMapping("/v2/city")
-    public ResponseEntity<ApiResponse> dropDownProvinceCode1() {
+    public ResponseEntity<?> dropDownProvinceCode1() {
         return ResponseEntity.ok().body(cityService.getCityV2());
     }
     @GetMapping("/v3/city")
-    public ResponseEntity<ApiResponse> dropDownProvinceCode2() {
+    public ResponseEntity<?> dropDownProvinceCode2() {
         return ResponseEntity.ok().body(cityService.getCityV3());
     }
 }

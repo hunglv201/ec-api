@@ -1,6 +1,5 @@
 package com.vn.ec.dto;
 
-import com.vn.ec.common.Constants;
 import com.vn.ec.common.validator.JsonFormatDate;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -15,7 +14,6 @@ import java.util.Map;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ErrorResponse {
-    private ApiResponse.StatusResponse status;
 
     @JsonFormatDate
     private Date timestamp;
@@ -25,14 +23,12 @@ public class ErrorResponse {
     private Map<String, String> details;
 
     public ErrorResponse(Integer code, Date timestamp, String message, Map<String, String> details) {
-        this.status = new ApiResponse.StatusResponse(code, Constants.NONE_COMPLETE);
         this.timestamp = timestamp;
         this.errorMessage = message;
         this.details = details;
     }
 
     public ErrorResponse(Integer code, Date timestamp, String message) {
-        this.status = new ApiResponse.StatusResponse(code, Constants.NONE_COMPLETE);
         this.timestamp = timestamp;
         this.errorMessage = message;
     }

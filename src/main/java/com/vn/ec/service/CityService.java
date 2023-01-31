@@ -1,6 +1,6 @@
 package com.vn.ec.service;
 
-import com.vn.ec.dto.ApiResponse;
+import com.vn.ec.dto.response.CityDto;
 import com.vn.ec.dto.response.CityDto1;
 import com.vn.ec.entity.ProvinceMasters;
 import com.vn.ec.repository.ProvinceMasterRepository;
@@ -14,10 +14,10 @@ import java.util.List;
 @AllArgsConstructor
 public class CityService {
     private final ProvinceMasterRepository cityRepository;
-    public ApiResponse getCity(){
-        return ApiResponse.apiResponseCompleted(cityRepository.getAllV1());
+    public  List<CityDto> getCity(){
+        return cityRepository.getAllV1();
     }
-    public ApiResponse getCityV2(){
+    public List<CityDto1> getCityV2(){
         List<ProvinceMasters> provinceMastersList = cityRepository.findAll();
         List<CityDto1> cityDto1s = new ArrayList<>();
         for (int i =0; i<provinceMastersList.size();i++){
@@ -27,10 +27,10 @@ public class CityService {
             cityDto1s.add(cityDto1);
         }
 
-        return ApiResponse.apiResponseCompleted(cityDto1s);
+        return cityDto1s;
     }
-    public ApiResponse getCityV3(){
-        return ApiResponse.apiResponseCompleted(cityRepository.getAllV3());
+    public List<CityDto1> getCityV3(){
+        return cityRepository.getAllV3();
     }
 
 }

@@ -1,7 +1,6 @@
 package com.vn.ec.common.exception;
 
 import com.vn.ec.common.Constants;
-import com.vn.ec.dto.ApiResponse;
 import com.vn.ec.dto.ErrorResponse;
 import org.springframework.core.NestedExceptionUtils;
 import org.springframework.core.convert.ConversionFailedException;
@@ -118,7 +117,7 @@ public class CustomExceptionHandler extends ResponseEntityExceptionHandler {
 
     @ExceptionHandler(ParseDateException.class)
     @ResponseStatus(HttpStatus.BAD_REQUEST)
-    public ResponseEntity<ApiResponse> parseDateException(RuntimeException ex) {
+    public ResponseEntity<?> parseDateException(RuntimeException ex) {
         ex.printStackTrace();
         ErrorResponse error = new ErrorResponse(HttpStatus.BAD_REQUEST.value(), new Date(), "Bad request");
         return new ResponseEntity(error, HttpStatus.BAD_REQUEST);

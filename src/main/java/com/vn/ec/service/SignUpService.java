@@ -1,7 +1,6 @@
 package com.vn.ec.service;
 
 import com.vn.ec.common.Constants;
-import com.vn.ec.dto.ApiResponse;
 import com.vn.ec.dto.request.SignUpRequest;
 import com.vn.ec.entity.CustomerAccount;
 import com.vn.ec.entity.CustomerProfiles;
@@ -31,10 +30,10 @@ public class SignUpService {
     private final CustomerAccountRepository customerAccountRepository;
     private final CustomerProfilesRepository customerProfilesRepository;
     @Transactional
-    public ApiResponse signUp(SignUpRequest request) throws InvalidAlgorithmParameterException, NoSuchPaddingException, IllegalBlockSizeException, NoSuchAlgorithmException, InvalidKeySpecException, BadPaddingException, InvalidKeyException {
+    public String signUp(SignUpRequest request) throws InvalidAlgorithmParameterException, NoSuchPaddingException, IllegalBlockSizeException, NoSuchAlgorithmException, InvalidKeySpecException, BadPaddingException, InvalidKeyException {
         Optional<CustomerAccount> customerAccountOptional = customerAccountRepository.findByLoginIdAndDeleteFlag(request.getLoginId(),false);
         if (customerAccountOptional.isPresent()) {
-            return new ApiResponse(Constants.HTTP_CODE_400, Constants.NONE_COMPLETE, "Phone number already exists");
+            return "Phone number already exists";
         }
         //        tạo mã mời và kiểm tra mã mời
         Long inviteBy = null;
@@ -72,6 +71,6 @@ public class SignUpService {
         customerProfiles1.setInvitedBy(inviteBy);
         customerProfiles1.setCommonRegister(0L);
         customerProfilesRepository.save(customerProfiles1);
-        return ApiResponse.apiResponseCompleted();
+        return "Completed";
     }
 }

@@ -1,7 +1,7 @@
 package com.vn.ec.controller;
 
-import com.vn.ec.dto.ApiResponse;
 import com.vn.ec.dto.request.LoginRequest;
+import com.vn.ec.dto.response.LoginResponse;
 import com.vn.ec.service.LoginService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -19,7 +19,7 @@ public class API5LoginController {
     private final LoginService loginService;
 
     @PostMapping("/login")
-    public ResponseEntity<ApiResponse> login(@Valid @RequestBody LoginRequest loginRequest) {
+    public ResponseEntity<LoginResponse> login(@Valid @RequestBody LoginRequest loginRequest) {
         return ResponseEntity.ok().body(loginService.login(loginRequest));
     }
 }
