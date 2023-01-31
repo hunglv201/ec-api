@@ -1,4 +1,4 @@
-package com.vn.ec.common;
+package com.vn.ec.service;
 
 import com.vn.ec.dto.response.MyInformationResponse;
 import com.vn.ec.repository.MyInformationRepository;

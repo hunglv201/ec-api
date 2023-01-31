@@ -1,6 +1,6 @@
 package com.vn.ec.controller;
 
-import com.vn.ec.common.CustomerAccountService;
+import com.vn.ec.service.CustomerAccountService;
 import com.vn.ec.dto.request.API19ChangePwdRequest;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;

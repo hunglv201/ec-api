@@ -1,6 +1,6 @@
 package com.vn.ec.controller;
 
-import com.vn.ec.common.MyInformationService;
+import com.vn.ec.service.MyInformationService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;

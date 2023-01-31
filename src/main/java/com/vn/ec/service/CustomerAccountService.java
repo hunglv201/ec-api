@@ -1,5 +1,6 @@
-package com.vn.ec.common;
+package com.vn.ec.service;
 
+import com.vn.ec.common.Constants;
 import com.vn.ec.common.exception.RecordNotFoundException;
 import com.vn.ec.dto.request.API19ChangePwdRequest;
 import com.vn.ec.dto.request.API21ResetPwdRequest;

@@ -1,6 +1,7 @@
 package com.vn.ec.controller;
 
-import com.vn.ec.common.NotificationService;
+import com.vn.ec.service.NotificationService;
+import com.vn.ec.dto.request.NotificationRequest;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,8 +15,8 @@ import javax.validation.Valid;
 public class Api30NotificationController {
     private final NotificationService notificationService;
 
-//    @GetMapping("/notification")
-//    public ResponseEntity<?> getNotification(@Valid NotificationRequest request) {
-//        return ResponseEntity.ok().body(notificationService.getByUserId(request));
-//    }
+    @GetMapping("/notification")
+    public ResponseEntity<?> getNotification(@Valid NotificationRequest request) {
+        return ResponseEntity.ok().body(notificationService.getByUserId(request));
+    }
 }

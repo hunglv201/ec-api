@@ -12,4 +12,5 @@ public class Utils {
         String generatedString = RandomStringUtils.random(length, useLetters, useNumbers);
         return generatedString;
     }
+    public static Integer SIZE_PAGE = 5;
 }
