@@ -130,7 +130,6 @@ public class CommonEntityColumn {
     public static final String METHOD = "method";
     public static final String INFORMATION = "information";
     public static final String NUMBER_POINTS = "number_points";
-    public static final String HEIGHT = "height";
     public static final String UNIT_PRICE = "unit_price";
     public static final String DISCOUNT_PERCENT = "discount_percent";
     public static final String NUMBER_STEP = "number_step";
@@ -239,4 +238,6 @@ public class CommonEntityColumn {
     public static final String OUT_DELIVERY_ID = "out_delivery_id";
     public static final String VEHICLE_NO = "vehicle_no";
     public static final String VEHICLE_KIND = "vehicle_kind";
+
+
 }

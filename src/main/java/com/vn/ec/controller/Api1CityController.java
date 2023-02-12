@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 @AllArgsConstructor
 @RequestMapping("api/ec")
 public class Api1CityController {
-    private final CityService cityService;
+    private  CityService cityService;
     @GetMapping("/city")
     public ResponseEntity<?> dropDownProvinceCode() {
         return ResponseEntity.ok().body(cityService.getCity());

@@ -19,7 +19,8 @@ public class WebSecurityConfig {
 
     private static final String[] AUTH_WHITELIST = {
             "/", "/api/ec/login","/api/ec/sign-up","/api/ec/v2/city","/api/ec/v3/city","/api/ec/city","/api/ec/city/*",
-            "/api/ec/v2/city/*","/api/ec/v3/city/*","/api/ec/v2/branch","/api/ec/v3/branch","/api/ec/branch"
+            "/api/ec/v2/city/*","/api/ec/v3/city/*","/api/ec/v2/branch","/api/ec/v3/branch","/api/ec/branch","/api/ec/product",
+            "/api/ec/create-student"
     };
 
     private AuthEntryPoint authEntryPointJwt;

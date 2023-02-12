@@ -10,7 +10,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import static com.vn.ec.utlis.Utils.SIZE_PAGE;
+
 
 @Service
 @AllArgsConstructor
@@ -19,12 +19,6 @@ public class NotificationService {
     public  PageBase getByUserId(NotificationRequest request){
         Pageable pageable= PageRequest.of(request.getCurrentPage(),3);
         Page<NotificationsResponse> listNotification=notificationsRepository.getListNotification(request.getUserId(),pageable);
-//        PageBase pageBase=PageBase.builder()
-//                .currentPage(request.getCurrentPage())
-//                .total(objects.getTotalElements())
-//                .totalPages(objects.getTotalPages())
-//                .perPage(SIZE_PAGE)
-//                .build();
 
         PageBase pageBase1 = new PageBase();
         pageBase1.setCurrentPage(request.getCurrentPage());
